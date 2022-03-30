@@ -1,0 +1,73 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+
+<div class="handcontainer">
+
+    <div class="banner">
+        <div class="smaller">
+            Tired of your students copying assignments from each other? Stop it here!
+        </div>
+        <div class="larger">
+            Do a plagiarism check on handwritten documents
+        </div>
+    </div>
+
+    <form class="form" action="{% url 'uploadfiles' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="fillers">
+            <div class="dropzone">
+                <span class="text select">Drop or click to upload pdf files here</span>
+                <input class="fileinput file" type="file" id="files" name="files"   multiple accept="application/pdf">
+            </div>
+            <div class="answerkey">
+                <textarea name="answerkey" id="answerkey" placeholder="paste your answer key here"></textarea>
+            </div>
+        </div>
+
+        <input type="submit" class="topbutton" value="Check for plagiarism">
+
+        <div class="filesuploaded">
+            <div class="heading">
+                <!-- Documents uploaded: 4 -->
+            </div>
+            <div class="filelist">
+                <!-- <div class="filename">
+                    <button class="closebut" data-label='filename'>+</button>
+                    <span>thisisafile.txt</span>
+                </div>
+                <div class="filename">
+                    <button class="closebut" data-label='filename'>+</button>
+                    <span>thisisafile.txt</span>
+                </div> -->
+            </div>
+        </div>
+        
+        
+    </form>
+
+    <!-- <form action="{% url 'uploadfiles' %}" style="display: none" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" required name="assignment" placeholder="Assignmnet name" required><br>
+        <textarea name="answerkey" id="answerkey" cols="30" rows="10" placeholder="paste your answer key here"></textarea><br>
+        <label for="files">Select files:</label>
+        <input required id='hehe' type="file" id="files" name="files"  multiple accept="application/pdf" style='background-color: blue; width: 300px; height: 300px' ><br><br>
+        <input type="submit" >
+    </form> -->
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
