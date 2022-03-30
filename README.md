@@ -1,0 +1,1 @@
+# End-To-End-System-For-Plagiarism-Detection-OCR
